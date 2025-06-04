@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montagem - Semáforo Inteligente</title>
+    <link rel="stylesheet" href="estilos/style.css">
+</head>
+<body>
+    <header>
+        <h1>Semáforo Inteligente para Pedestres</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="projeto.html">Projeto</a></li>
+                <li><a href="montagem.html">Montagem</a></li>
+                <li><a href="codigo.html">Código</a></li>
+                <li><a href="autores.html">Autores</a></li>
+                <li><a href="extras.html">Extras</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="componentes">
+            <h2>Componentes e Suprimentos</h2>
+            <ul>
+                <li><strong>Arduino UNO R3</strong> - Placa microcontroladora principal do projeto.</li>
+                <li><strong>Protoboard</strong> - Usada para conectar os componentes eletrônicos sem necessidade de solda.</li>
+                <li><strong>LEDs (vermelho, amarelo e verde)</strong> – Representam as luzes do semáforo. Cada cor tem sua função no controle de tráfego.</li>
+                <li><strong>Resistores de 220Ω</strong> – Limitam a corrente que passa pelos LEDs, protegendo-os contra queima.</li>
+                <li><strong>Botão (push button)</strong> – Ativado pelo pedestre para solicitar a travessia.</li>
+                <li><strong>Cabos jumpers</strong> – Conectam os pinos do Arduino aos componentes na protoboard.</li>
+            </ul>
+        </section>
+
+        <section id="plataformas">
+            <h2>Aplicativos e Plataformas Utilizados</h2>
+            <ul>
+                <li><strong>Arduino IDE</strong> – Para programação e envio do código ao Arduino.</li>
+                <li><strong>Tinkercad</strong> – Para criação do esquema visual de montagem do circuito.</li>
+                <li><strong>GitHub</strong> – Hospedagem do código-fonte do projeto.</li>
+                <li><strong>Visual Studio Code</strong> – Editor utilizado para escrever o site do projeto.</li>
+            </ul>
+        </section>
+
+        <section id="passo-a-passo">
+            <h2>Passo a Passo da Montagem</h2>
+
+            <h3>1️⃣ Preparação da Base</h3>
+            <p>Conecte a protoboard e o Arduino UNO em uma superfície segura. Conecte o cabo USB ao computador.</p>
+            <img src="imagens/imagem-etapa1.jpg" alt="Base do projeto conectada com Arduino e protoboard" class="imagem-montagem">
+
+            <h3>2️⃣ Inserção dos LEDs</h3>
+            <p>Insira os LEDs na protoboard com resistores de 220Ω em série. Certifique-se da polaridade correta.</p>
+            <img src="imagens/imagem-etapa2.jpg" alt="LEDs inseridos corretamente na protoboard com resistores" class="imagem-montagem">
+
+            <h3>3️⃣ Conexão dos LEDs ao Arduino</h3>
+            <p>Conecte os LEDs aos pinos digitais do Arduino com jumpers. Ligue o GND na barra negativa da protoboard.</p>
+            <img src="imagens/imagem-etapa 3.jpg" alt="Jumpers conectando os LEDs ao Arduino UNO" class="imagem-montagem">
+
+            <h3>4️⃣ Instalação do Botão</h3>
+            <p>Insira o botão e ligue-o ao pino digital 10 e ao pino 5V. Um resistor pode ser usado como pull-down.</p>
+            <img src="imagens/imagem-etapa4.jpg" alt="Botão conectado corretamente ao Arduino e protoboard" class="imagem-montagem">
+
+            <h3>5️⃣ Upload do Código</h3>
+            <p>Abra a Arduino IDE, conecte a placa e envie o código. Certifique-se de selecionar a porta correta.</p>
+
+            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <img src="imagens/Imagem-etapa5(1).png" alt="Código carregado no Arduino IDE - parte 1" style="width: 440px; border-radius: 12px;">
+                <img src="imagens/Imagem-etapa5(2).png" alt="Código carregado no Arduino IDE - parte 2" style="width: 440px; border-radius: 12px;">
+                <img src="imagens/Imagem-etapa5(3).png" alt="Código carregado no Arduino IDE - parte 3" style="width: 440px; border-radius: 12px;">
+            </div>
+
+
+
+            <h3>6️⃣ Teste do Projeto</h3>
+            <p>Pressione o botão e observe o funcionamento do semáforo. Verifique se os LEDs alternam corretamente.</p>
+            <img src="imagens/projeto-montado.jpg" alt="Semáforo funcionando com LEDs acesos conforme esperado" class="imagem-montagem">
+        </section>
+    </main>
+
+    <footer>
+        <p><strong>Voltar à Página Inicial</strong></p>
+        <ul><li><a href="index.html">Página Inicial</a></li></ul>
+        <p>© 2025 - Projeto de Sistemas Digitais - Semáforo Inteligente</p>
+    </footer>
+</body>
+</html>
+

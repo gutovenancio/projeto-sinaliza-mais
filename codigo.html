@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código - Semáforo Inteligente</title>
+    <link rel="stylesheet" href="estilos/style.css">
+</head>
+<body>
+    <header>
+        <h1>Semáforo Inteligente para Pedestres</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="projeto.html">Projeto</a></li>
+                <li><a href="montagem.html">Montagem</a></li>
+                <li><a href="codigo.html">Código</a></li>
+                <li><a href="autores.html">Autores</a></li>
+                <li><a href="extras.html">Extras</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="Codigo-do-Projeto">
+            <h2>Passo a Passo do Código</h2>
+
+            <h3>1️⃣ Definição dos Recursos</h3>
+            <p>No início, definimos os pinos utilizados para os LEDs dos carros, dos pedestres e o botão:</p>
+            <pre><code>// LEDs do semáforo de carros
+const int vermelhoCarro = 13;
+const int amareloCarro = 12;
+const int verdeCarro = 11;
+
+// LEDs do semáforo de pedestres
+const int vermelhoPedestre = 4;
+const int verdePedestre = 7;
+
+// Botão
+const int BTN_PESO = 10;
+            </code></pre>
+
+            <h3>2️⃣ Configuração Inicial (<code>setup()</code>)</h3>
+            <p>Todos os LEDs são configurados como saídas e o botão como entrada com pull-up. Também definimos os estados iniciais:</p>
+            <pre><code>void setup() {
+  pinMode(vermelhoCarro, OUTPUT);
+  pinMode(amareloCarro, OUTPUT);
+  pinMode(verdeCarro, OUTPUT);
+  pinMode(vermelhoPedestre, OUTPUT);
+  pinMode(verdePedestre, OUTPUT);
+
+  pinMode(BTN_PESO, INPUT_PULLUP);
+
+  digitalWrite(vermelhoCarro, LOW);
+  digitalWrite(amareloCarro, LOW);
+  digitalWrite(verdeCarro, HIGH);
+
+  digitalWrite(vermelhoPedestre, HIGH);
+  digitalWrite(verdePedestre, LOW);
+}
+            </code></pre>
+
+            <h3>3️⃣ Lógica do Ciclo Semafórico (<code>loop()</code>)</h3>
+            <p>Quando o botão for pressionado, o ciclo do semáforo é ativado:</p>
+            <pre><code>void loop() {
+  if(digitalRead(BTN_PESO) == LOW) {
+    delay(3000);
+
+    // Troca o semáforo dos carros
+    digitalWrite(verdeCarro, LOW);
+    digitalWrite(amareloCarro, HIGH);
+    delay(5000);
+
+    digitalWrite(amareloCarro, LOW);
+    digitalWrite(vermelhoCarro, HIGH);
+
+    // Troca o semáforo dos pedestres
+    digitalWrite(vermelhoPedestre, LOW);
+    digitalWrite(verdePedestre, HIGH);
+    delay(8000);
+            </code></pre>
+
+            <h3>4️⃣ Aviso de Encerramento</h3>
+            <p>Antes de voltar ao estado inicial, o LED verde dos pedestres pisca para alertar que o tempo está acabando:</p>
+            <pre><code>    for (int i = 0; i < 3; i++) {
+      digitalWrite(verdePedestre, LOW);
+      delay(500);
+      digitalWrite(verdePedestre, HIGH);
+      delay(500);
+    }
+
+    // Volta ao estado inicial
+    digitalWrite(verdePedestre, LOW);
+    digitalWrite(vermelhoPedestre, HIGH);
+    delay(2000);
+
+    digitalWrite(vermelhoCarro, LOW);
+    digitalWrite(verdeCarro, HIGH);
+  }
+}
+            </code></pre>
+
+            <h3>🔗 GitHub</h3>
+            <p>Clique no link abaixo para acessar o código completo no GitHub:</p>
+            <p><a href="https://github.com/gutovenancio" target="_blank">Ver no GitHub</a></p>
+
+            <h3>⬇️ Download do Projeto</h3>
+            <p>Clique no botão abaixo para baixar todos os arquivos do projeto:</p>
+            <a href="projeto-completo.zip" download style="display: inline-block; padding: 0.8rem 1.5rem; 
+                background-color: #43a047; color: white; font-weight: bold; border-radius: 8px; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: 0.3s ease;">
+                Baixar Projeto Completo (.zip)
+
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <p><strong>Voltar à Página Inicial</strong></p>
+        <ul><li><a href="index.html">Página Inicial</a></li></ul>
+        <p>© 2025 - Projeto de Sistemas Digitais - Semáforo Inteligente</p>
+    </footer>
+</body>
+</html>
